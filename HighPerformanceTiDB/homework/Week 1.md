@@ -50,7 +50,16 @@
   ```mysql
   mysql> SELECT `TYPE`, `INSTANCE`, `STATUS_ADDRESS`, `VERSION` FROM `INFORMATION_SCHEMA`.`CLUSTER_INFO`;
   
-  
+  +---------+-----------------+-----------------+--------------+
+  | TYPE    | INSTANCE        | STATUS_ADDRESS  | VERSION      |
+  +---------+-----------------+-----------------+--------------+
+  | tidb    | 127.0.0.1:4000  | 127.0.0.1:10080 | 4.0.0-beta.2 |
+  | pd      | 127.0.0.1:2379  | 127.0.0.1:2379  | 4.0.4        |
+  | tikv    | 127.0.0.1:20161 | 127.0.0.1:20181 | 4.0.4        |
+  | tikv    | 127.0.0.1:20162 | 127.0.0.1:20182 | 4.0.4        |
+  | tikv    | 127.0.0.1:20160 | 127.0.0.1:20180 | 4.0.4        |
+  | tiflash | 127.0.0.1:3930  | 127.0.0.1:20292 | v4.0.4       |
+  +---------+-----------------+-----------------+--------------+
   ```
 
 ### 源码修改
@@ -177,7 +186,7 @@
      mysql> create table t(id varchar(20));
      ```
 
-     ![image-20200816155237211](E:\MyWork\MyLearningNote\database-learning\HighPerformanceTiDB\homework\pic\w1-check2.png)
+     <img src="pic\w1-check2.png" alt="avatar" style="zoom:80%;" />
 
      验证成功。
 
